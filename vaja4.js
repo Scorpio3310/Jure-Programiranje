@@ -88,3 +88,46 @@ console.log("Končna vnosta: " + vsota);
 // Z 'console.log' ali z 'alert'
 // Postopek se ponovi
 // Pri katerem koli oknu lahko uporabnik vpiše 'konec'
+
+let kalkulacija_stevilk;
+let ponavljaj = true;
+
+
+while (ponavljaj){
+
+    let vnos_stevilke_ena = prompt("Vpiši PRVO številko, za preklic vpiši 'konec'");
+    if (vnos_stevilke_ena == "konec"){ // preverjanje če je "konec"
+        break;
+    }
+
+    let vnos_operatorja = prompt("Vpiši operator '+ / -' za preklic vpiši 'konec'");
+    if (vnos_operatorja == "konec"){ // preverjanje če je "konec"
+        break;
+    }
+
+    let vnos_stevilke_dve = prompt("Vpiši DRUGO številko, za preklic vpiši 'konec'");
+    if (vnos_stevilke_dve == "konec"){ // preverjanje če je "konec"
+        break;
+    }
+
+    vnos_stevilke_ena = parseInt(vnos_stevilke_ena); //pretvorba v intiger
+    vnos_stevilke_dve = parseInt(vnos_stevilke_dve); //pretvorba v intiger
+
+    if (Number.isInteger(vnos_stevilke_ena && vnos_stevilke_dve)) { //preverjanje vnosa prvih dveh številk če so intiger
+        
+        //preverjanje operatorja
+        if (vnos_operatorja == "+"){
+            kalkulacija_stevilk = vnos_stevilke_ena + vnos_stevilke_dve;
+        }else if(vnos_operatorja == "-"){
+            kalkulacija_stevilk = vnos_stevilke_ena - vnos_stevilke_dve;
+        }else {
+            kalkulacija_stevilk = "Zgodila se je napaka pri vnosu operatorja!"
+        }
+
+    }else {
+        kalkulacija_stevilk = "Zgodila se je napaka pri vnosu številk!"
+    }
+    
+    // Prikaz rezultata
+    alert(vnos_stevilke_ena +" "+  vnos_operatorja +" "+ vnos_stevilke_dve +"\n"+ "Rezultat je: " + kalkulacija_stevilk);
+}
