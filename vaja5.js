@@ -130,3 +130,64 @@ console.log(najvecjeStevilo2(1,2,3))
 console.log(najvecjeStevilo2(5,2,3))
 console.log(najvecjeStevilo2(1,6,3))
 
+// Domača naloga
+/*
+1. Napiši funkcijo "ratio", ki sprejme dve številki, deli manjšo številko z večjo in vrne rezultat. Katera vhodna številka je večja, ni znano vnaprej.
+Primeri:
+ratio(1, 2) -> 0.5
+ratio(2, 1) -> 0.5
+ratio(4, 2) -> 0.5
+
+ratio(4, 1) -> 0.25
+2. Napiši funkcijo "captureFinished", ki preverja ali se lahko zajem pri določeni stranki zaključi. Funkcija sprejme število zaposlenih in število rešenih vprašalnikov, nato vrne "true", če je vprašalnik rešilo več kot 90% zaposlenih, sicer naj vrne "false".
+Primeri:
+captureFinished(100, 80) -> false
+captureFinished(100, 95) -> true
+
+3. Napiši funkcijo "repeatString", ki sprejme niz "word" in številko "n". Funkcija naj vrne nov niz, ki je n-ponovitev vhodnega niza.
+Primeri:
+repeatString("a", 3) -> "aaa"
+repeatString("aaa", 2) -> "aaaaaa"
+repeatString("banana", 0) -> ""
+*/
+
+console.clear();
+
+function ratio(stevilo1, stevilo2) {
+    if(stevilo2 > stevilo1){
+        return stevilo1/stevilo2;
+    }else {
+        return stevilo2/stevilo1;
+    }
+}
+
+console.log(ratio(1, 2));
+console.log(ratio(2, 1));
+console.log(ratio(4, 2));
+
+
+
+function captureFinished(steviloZaposlenih, steviloResenihVprasalnikov) {
+    if((steviloResenihVprasalnikov/steviloZaposlenih) >= 0.9){
+        return true;
+    }else {
+        return false;
+    }
+}
+
+console.log(captureFinished(100, 80));
+console.log(captureFinished(100, 95));
+
+
+
+function repeatString(word, n) {
+    let repeat = "";
+    for(let i = 0; i < n; i++){
+        repeat = repeat + word;
+    }
+    return repeat;
+}
+
+console.log(repeatString("a", 3));
+console.log(repeatString("aaa", 2));
+console.log(repeatString("banana", 0));
